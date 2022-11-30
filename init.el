@@ -19,16 +19,6 @@
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 
-
-
-;; ** LOAD THEME **
-(load-theme 'tango-dark)
-
-
-
-
-
-
 ;; *** PACKAGE MANAGEMENT ***
 
 (require 'package)
@@ -65,6 +55,9 @@
 ;; ** Command log mode, enable with clm/toggle **
 (use-package command-log-mode)
 
+;; ** Get icons **
+(use-package all-the-icons)
+
 
 ;; ** ROW + COL Numbers **
 (column-number-mode)
@@ -80,7 +73,6 @@
 ;; ** rainbow delims **
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode)) 
-
 ;; ** which-key panel **
 (use-package which-key
   :init (which-key-mode)
@@ -109,6 +101,10 @@
   :config
   (ivy-mode 1))
 
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
+
+
+
 ;; ** extra for ivy **
 (use-package ivy-rich
   :init
@@ -135,7 +131,7 @@
   :custom ((doom-modeline-height 15)))
 
 (use-package doom-themes)
-
+(use-package org)
 
 ;; ** do not edit below! ***
 (custom-set-variables
@@ -144,7 +140,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(doom-themes helpful ivy-rich which-key rainbow-delimiters counsel use-package ivy doom-modeline command-log-mode)))
+   '(all-the-icons doom-themes helpful ivy-rich which-key rainbow-delimiters counsel use-package ivy doom-modeline command-log-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
